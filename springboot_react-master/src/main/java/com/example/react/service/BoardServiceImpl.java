@@ -10,8 +10,13 @@ import java.util.Map;
 
 @Service
 public class BoardServiceImpl implements BoardService {
-    @Autowired
+
     private BoardRepository boardRepository;
+
+    @Autowired
+    public BoardServiceImpl(BoardRepository boardRepository) {
+        this.boardRepository = boardRepository;
+    }
 
     public int id = 2;
 

@@ -12,8 +12,12 @@ import java.util.Map;
 @RestController
 public class BoardController {
 
-    @Autowired
     private BoardService boardService;
+
+    @Autowired
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
+    }
 
     @GetMapping("/v1/board")
     public List<Map<String, Object>> getBoards() {

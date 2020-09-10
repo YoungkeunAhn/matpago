@@ -5,10 +5,10 @@
 
 <mapper namespace="com.example.react.repository.BoardRepository">
     <select id="getBoards" resultType="java.util.HashMap">
-        SELECT * FROM employee;
+        select * from employee;
     </select>
 
     <select id="getBoard" resultType="java.util.HashMap">
-        SELECT * FROM employee where id = #{id};
+        select * FROM employee where id = #{id};
     </select>
 </mapper>
