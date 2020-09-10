@@ -5,6 +5,9 @@ import com.example.react.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -19,10 +22,14 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public int joinMember() {
-        membersDto.setUsername("테스트6");
-        membersDto.setNaverEmail("ccc@naver.com");
-        membersDto.setPhoneNum("010-3333-3333");
-        return memberRepository.joinMembers(membersDto);
+        membersDto.setUsername("테스트");
+        membersDto.setNaverEmail("aaa@naver.com");
+        membersDto.setPhoneNum("010-1111-1111");
+        return memberRepository.joinMember(membersDto);
+    }
 
+    @Override
+    public List<Map<String, Object>> listMember() {
+        return memberRepository.listMember();
     }
 }

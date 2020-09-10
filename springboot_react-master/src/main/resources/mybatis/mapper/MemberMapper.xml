@@ -5,8 +5,12 @@
 
 <mapper namespace="com.example.react.repository.MemberRepository">
 
-    <select id="joinMembers" parameterType="com.example.react.Dtos.MembersDto" resultType="int">
-        insert into members (username, join_date, naverEmail, phoneNum, phone_auth_yn) values (#{username}, now(), #{naverEmail}, #{phoneNum}, 1);
-    </select>
+    <insert id="joinMember" parameterType="com.example.react.Dtos.MembersDto">
+        insert into members (username, join_date, naverEmail, phoneNum, phone_auth_yn)
+        values (#{username}, now(), #{naverEmail}, #{phoneNum}, 1);
+    </insert>
 
+    <select id="listMember" resultType="java.util.HashMap">
+        select * from members;
+    </select>
 </mapper>
