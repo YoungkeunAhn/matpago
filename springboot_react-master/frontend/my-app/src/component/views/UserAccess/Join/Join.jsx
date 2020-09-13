@@ -18,11 +18,15 @@ export default class Post extends React.Component {
             name: this.state.name
         };
 
-        axios.post(`http://localhost:8080/api/hello2`,{user})
+        axios.post(`http://localhost:8080/api/hello`,{user})
             .then(res => {
                 console.log(res);
                 console.log(res.data);
             })
+
+            .catch(error => {
+                console.log(error.response)
+            });
     }
 
 
