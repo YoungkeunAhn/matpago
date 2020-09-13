@@ -22,14 +22,15 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public int joinMember() {
-        membersDto.setUsername("테스트");
-        membersDto.setNaverEmail("aaa@naver.com");
-        membersDto.setPhoneNum("010-1111-1111");
+        membersDto.setUsername("테스트2");
+        membersDto.setNaverEmail("bbb@naver.com");
+        membersDto.setPhoneNum("010-2222-1111");
         return memberRepository.joinMember(membersDto);
     }
 
     @Override
     public List<Map<String, Object>> listMember() {
-        return memberRepository.listMember();
+        membersDto.setPhoneAuth_yn(1);
+        return memberRepository.listMember(membersDto);
     }
 }

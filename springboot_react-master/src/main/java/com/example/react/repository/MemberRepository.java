@@ -11,5 +11,5 @@ import java.util.Map;
 @Repository
 public interface MemberRepository {
     int joinMember(MembersDto membersDto);
-    List<Map<String, Object>> listMember();
+    List<Map<String, Object>> listMember(MembersDto membersDto);
 }

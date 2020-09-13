@@ -1,8 +1,8 @@
 package com.example.react.controller;
 
 import com.example.react.service.MemberService;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,12 +27,9 @@ public class MemberController {
 
     @GetMapping("/joinMember2")
     public List<Map<String, Object>> listMember() {
+        System.out.println("하이");
         return memberService.listMember();
     }
-
-
-
-
 
 }
 
